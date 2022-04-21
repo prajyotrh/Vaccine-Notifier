@@ -1,0 +1,87 @@
+<div class="container-fluid">
+
+  <div class="row mt-4">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <div class="card shadow">
+              <div class="card-body">
+                <form [formGroup]="registrationForm" (ngSubmit)="userRegistration()">
+
+                  <div class="row">
+                    <div class="col-12 text-center mb-3 text-success">
+                      <strong>User Registration</strong>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" formControlName="name" >
+                        <label for="floatingInput">Full name</label>
+                        <div *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)" class="text-danger">
+                          This is required field
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" formControlName="email" >
+                        <label for="floatingInput">Email</label>
+                        <div *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)" class="text-danger">
+                          This is required field
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" formControlName="mobile" >
+                        <label for="floatingInput">Mobile</label>
+                        <div *ngIf="registrationForm.get('mobile')?.invalid && (registrationForm.get('mobile')?.dirty || registrationForm.get('mobile')?.touched)" class="text-danger">
+                          This is required field
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="password" class="form-control" formControlName="password" >
+                        <label for="floatingInput">Set Password</label>
+                        <div *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)" class="text-danger">
+                          This is required field
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3 me-auto ms-auto">
+                        <button class="btn btn-outline-primary" type="submit" [disabled]="registrationForm.invalid">Register</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3 me-auto ms-auto">
+                        Already have an account ? <a href="/user/login" style="text-decoration: none;"><span style="color: red;">Log In</span></a>
+                      </div>
+                    </div>
+                  </div>
+
+              </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4"></div>
+  </div>
+
+</div>

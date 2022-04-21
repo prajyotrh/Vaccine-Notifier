@@ -1,0 +1,63 @@
+<div class="container-fluid">
+
+  <div class="row mt-4">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <div class="card shadow">
+              <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+
+                  <div class="row">
+                    <div class="col-12 text-center mb-3 text-success">
+                      <strong>User Login</strong>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" formControlName="username" >
+                        <label for="floatingInput">Username</label>
+                        <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="text-danger">
+                          This is required field
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="password" class="form-control" formControlName="password" >
+                        <label for="floatingInput">Password</label>
+                        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-danger">
+                          This is required field
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3 me-auto ms-auto">
+                        <button class="btn btn-outline-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3 me-auto ms-auto">
+                        Are you new here ? <a href="/user/register" style="text-decoration: none;"><span style="color: red;">Register</span></a>
+                      </div>
+                    </div>
+                  </div>
+
+              </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4"></div>
+  </div>
+
+</div>

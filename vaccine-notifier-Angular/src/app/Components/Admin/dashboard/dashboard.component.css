@@ -1,0 +1,16 @@
+.sidebar a{
+    text-decoration: none;
+    color: white;
+    display: block !important;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .sidebar a:hover{
+  transform: scale(1.02);
+  }
+  
+  
+  
+  

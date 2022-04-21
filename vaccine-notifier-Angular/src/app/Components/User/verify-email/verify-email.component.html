@@ -1,0 +1,58 @@
+<div class="container-fluid">
+
+  <div class="row mt-4">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <div class="card shadow">
+              <div class="card-body">
+                <form [formGroup]="otpForm" (ngSubmit)="verifyEmail()">
+
+                  <div class="row">
+                    <div class="col-12 text-center mb-3 text-success">
+                      <strong>Verify Email</strong>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12 text-center mb-3">
+                      OTP has sent on your email.
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-floating mb-3">
+                        <input type="number" class="form-control" formControlName="otp" >
+                        <label for="floatingInput">OTP</label>
+                        <div *ngIf="otpForm.get('otp')?.invalid && (otpForm.get('otp')?.dirty || otpForm.get('otp')?.touched)" class="text-danger">
+                          This is required field
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3 me-auto ms-auto">
+                        <button class="btn btn-outline-primary" type="submit" [disabled]="otpForm.invalid">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3 me-auto ms-auto">
+                        Not received OTP ? <a href="/user/verify-email" type="submit" style="text-decoration: none;"><span style="color: darkblue">Resend OTP</span></a>
+                      </div>
+                    </div>
+                  </div>
+
+
+              </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4"></div>
+  </div>
+
+</div>
